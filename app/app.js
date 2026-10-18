@@ -33,6 +33,7 @@ const req = (r) => new Promise((res, rej) => { r.onsuccess = () => res(r.result)
 const getAll = async () => db ? req(tx("readonly").getAll()) : [...mem.values()];
 const has = async (id) => db ? !!(await req(tx("readonly").get(id))) : mem.has(id);
 const put = async (row) => db ? req(tx("readwrite").put(row)) : mem.set(row.id, row);
+const clearRows = async () => db ? req(tx("readwrite").clear()) : mem.clear();
 
 // ---------- model (optional; rows work without it) ----------
 let model = null;
@@ -233,4 +234,17 @@ $("loadModel").addEventListener("click", loadModel);
 $("copyLog").addEventListener("click", copyLog);
 if (stalls.length) $("copyLog").hidden = false;
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+// Hidden, for demos and tests: ?reset-rows shows a button that deletes the saved rows on this device (two taps).
+// The downloaded model is kept (it lives in the browser cache, not in IndexedDB).
+if (location.search.includes("reset-rows")) {
+  const b = document.createElement("button");
+  b.className = "ghost"; b.type = "button"; b.textContent = "Delete all saved rows on this device";
+  let armed = false;
+  b.addEventListener("click", async () => {
+    if (!armed) { armed = true; b.textContent = "Tap again to delete all rows (the model stays)"; return; }
+    await clearRows(); b.textContent = "All rows deleted."; b.disabled = true; await render();
+  });
+  $("tab-paste").querySelector(".card").append(b);
+}
 await render();
+
