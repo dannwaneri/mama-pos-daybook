@@ -6,7 +6,7 @@ Deadline: Sun 18 Oct 11:59 PM PDT = **Mon 19 Oct 07:59 WAT**. Spec written Fri 1
 **First user:** a POS operator in Port Harcourt, called "Mama POS" in public (her choice). Interview, 15 Oct:
 uses Moniepoint and Nomba; 10–20 transactions a day; profit in a notebook, "takes long";
 money not balancing is "a pain, she stopped checking"; customers saying "I sent it" when it did not
-arrive "usually happens"; charges ₦150 per ₦5,000; pays for no tool now; said yes to ₦500 a month.
+arrive "usually happens"; charges ₦150 per ₦5,000; pays for no tool now; said yes to ₦5,000 a month (corrected 19 Oct; first written as ₦500).
 
 **Her phone:** TECNO Camon 17 Pro (CG8h), Helio G90T, 8 GB RAM, Android 11 (HiOS 7.6), Chrome 144. `navigator.gpu` is present, but on 18 Oct `requestAdapter()` gave no adapter ("Failed to get GPU adapter"), so WebGPU does not work on it. The CPU path needs the int8 model (q4 has no CPU kernel), and int8 scored 1/30 kinds at 36 s/alert even on the laptop (bench/RESULTS.md, run 9). **So Gemma does not run on her phone.** See the 18 Oct decision under Architecture.
 
