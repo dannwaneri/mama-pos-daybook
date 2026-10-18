@@ -5,3 +5,4 @@ node_modules/
 .wrangler/
 deploy-prod/
 bench/vendor/
+demo/out/
