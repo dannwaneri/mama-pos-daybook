@@ -44,8 +44,9 @@ never depend on the model.
 ## Limits (measured, not guessed)
 
 - **Gemma does not run on her phone.** Her phone (Tecno Camon 17 Pro, Android 11) reports WebGPU but gives no GPU
-  adapter. The CPU version of the model scored 1/30 kinds at 36 s per alert even on a laptop (run 9). So Gemma runs on
-  a laptop. Her phone runs the rest of the app: rows, kinds, Did it land? and End of day all work without the model.
+  adapter. The CPU version of the model scored 1/30 kinds at 36 s per alert even on a laptop (run 9). So Gemma needs a
+  device with a working GPU: a laptop, or a phone like a Pixel 8a (works, per the author's own phone). Her phone runs
+  the rest of the app: rows, kinds, Did it land? and End of day all work without the model.
 - 5 real alerts is a small set, and the bank-name trim in the guard was written after seeing them.
 - Reads **Moniepoint credit alerts only**. She also uses Nomba; other banks are not done.
 - Charges are an estimate: the alerts show money in, not the cash she paid out.

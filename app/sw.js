@@ -1,5 +1,5 @@
 // Offline after first load: cache the app shell. The model files are cached by transformers.js itself.
-const CACHE = "pos-daybook-v15";   // bump on every app change: the shell is served cache-first
+const CACHE = "pos-daybook-v16";   // bump on every app change: the shell is served cache-first
 const SHELL = ["./", "./index.html", "./app.js", "./manifest.json", "./src/parse.js", "./src/guard.js",
   "./src/prompt.js", "./src/classify.js", "./src/daybook.js", "./src/rules.js", "./src/resumable.js", "./vendor/transformers.min.js"];
 

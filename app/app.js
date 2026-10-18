@@ -71,7 +71,7 @@ async function loadModel() {
     if (device === "wasm" && !location.search.includes("cpu")) {
       try { await wake?.release(); } catch {}
       $("modelState").textContent = "Gemma: needs a GPU";
-      $("addStatus").textContent = "This device has no usable GPU, so Gemma cannot read names here. Use a laptop for that. Rows, Did it land? and End of day still work.";
+      $("addStatus").textContent = "This device has no usable GPU, so Gemma cannot read names here. Use a laptop or a newer phone for that. Rows, Did it land? and End of day still work.";
       return;
     }
     let gen;
