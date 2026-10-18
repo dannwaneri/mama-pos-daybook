@@ -116,7 +116,7 @@ const waitingName = (r) => r.kind === "pending" || r.name === "pending";
 async function classifyPending() {
   if (!model) return;
   const pending = (await getAll()).filter(waitingName);
-  let done = 0;
+  let done = 0, notRead = 0;
   for (const [i, r] of pending.entries()) {
     $("addStatus").textContent = `Gemma reading name ${i + 1} of ${pending.length}…`;
     const tc = performance.now();
@@ -131,10 +131,13 @@ async function classifyPending() {
     }
     lastReadS.push(+((performance.now() - tc) / 1000).toFixed(1));
     await put({ ...r, kind: c.kind, from: c.from, name: c.name, attempts: c.attempts });
-    done++;
+    done++; if (c.name !== "read") notRead++;
     await render();
   }
-  if (done && !gpuLost) $("addStatus").textContent = `Done. ${done} name${done > 1 ? "s" : ""} read (${lastReadS.slice(-done).join(" s, ")} s on ${usedDevice}).`;
+  // Count only names Gemma really read; a refused one is "not read" (18 Oct: "3 names read" hid a miss).
+  const read = done - notRead;
+  if (done && !gpuLost) $("addStatus").textContent = `Done. ${read} name${read === 1 ? "" : "s"} read` +
+    (notRead ? `, ${notRead} not read` : "") + ` (${lastReadS.slice(-done).join(" s, ")} s on ${usedDevice}).`;
 }
 
 // ---------- paste ----------
