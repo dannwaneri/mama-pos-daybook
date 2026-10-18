@@ -1,0 +1,746 @@
+5 s  Loading onnx-community/gemma-3-1b-it-ONNX (int8) on wasm, prompt=few…
+1520 s  syn-30 ✗kind ✓from 48.1s  got=unclear/null | SUMMARY {"n":30,"kind_acc":1,"from_acc":14,"unclear":20,"retried":27,"invented_number_rejections":1,"median_s":36.3}
+{
+ "model": {
+  "id": "onnx-community/gemma-3-1b-it-ONNX",
+  "dtype": "int8"
+ },
+ "style": "few",
+ "device": "wasm",
+ "isolated": true,
+ "items": [
+  {
+   "id": "syn-01",
+   "narration": "TRANSFER FROM CHIDI OKAFOR GTBank *****1234/TRF|REF000111",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "CHIDI OKAFOR"
+   },
+   "got": {
+    "kind": "other",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": false,
+   "calls": 2,
+   "s": 50,
+   "first_output": "Here's the breakdown of the labels for each narration, based on your provided guidelines:\n\n*   **Narration: TRANSFER FROM AMAKA EZE**\n    *   **kind:** \"custome",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "syn-02",
+   "narration": "NIP:ADAEZE NWOSU-for cash",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "ADAEZE NWOSU"
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": false,
+   "calls": 2,
+   "s": 57.6,
+   "first_output": "Okay, I've reviewed the narration and will label it as requested.\n\nHere's the breakdown:\n\n*   **Narration: TRANSFER FROM AMAKA EZE** - **kind: customer_transfer",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-03",
+   "narration": "Mama Ngozi for 2k withdrawal",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "Mama Ngozi"
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": false,
+   "calls": 2,
+   "s": 36.3,
+   "first_output": "Here's the breakdown of the narration labels:\n\n*   **Narration: TRANSFER FROM AMAKA EZE Opay *****5555/TRF|REF999** - **kind: own_airtime**",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-04",
+   "narration": "TRF FRM EMEKA OBI TO POS VIA OPAY REF:XYZ0001",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "EMEKA OBI"
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": false,
+   "calls": 2,
+   "s": 19.6,
+   "first_output": "",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-05",
+   "narration": "Kuda/TUNDE BAKARE/cash pls",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "TUNDE BAKARE"
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": false,
+   "calls": 2,
+   "s": 42.3,
+   "first_output": "Here's the label for each narration:\n\n*   **Narration: TRANSFER FROM AMAKA EZE Opay *****5555/TRF|REF999** - **kind: transfer**\n*   **",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-06",
+   "narration": "FIRST BANK MOB TRF FROM NKECHI EZE",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "NKECHI EZE"
+   },
+   "got": {
+    "kind": "other",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": false,
+   "calls": 2,
+   "s": 42,
+   "first_output": "Okay, let's analyze the narration and label it.\n\n**Analysis:**\n\nThe narration describes a transfer from a customer named Kind, using the following identifiers:\n",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "syn-07",
+   "narration": "from Ifeoma",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "Ifeoma"
+   },
+   "got": {
+    "kind": "own_airtime",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": false,
+   "calls": 2,
+   "s": 25.9,
+   "first_output": "",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "syn-08",
+   "narration": "Access-BLESSING UDO-POS",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "BLESSING UDO"
+   },
+   "got": {
+    "kind": "other",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": false,
+   "calls": 1,
+   "s": 12.5,
+   "first_output": "JSON: {\"kind\":\"other\",\"from\":null}",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-09",
+   "narration": "PalmPay transfer SAMUEL AKPAN",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "SAMUEL AKPAN"
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": false,
+   "calls": 2,
+   "s": 33.4,
+   "first_output": "Okay, I'm ready to label the narration. Please provide the narration text again. I will then give you the JSON output.",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-10",
+   "narration": "UBA/OKON ETIM/school fees cash",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "OKON ETIM"
+   },
+   "got": {
+    "kind": "other",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": false,
+   "calls": 2,
+   "s": 40.8,
+   "first_output": "Here's the breakdown of the narration labels:\n\n*   **Narration: TRANSFER FROM AMAKA EZE** - kind: **kind**\n*   **Narration: for cash from brother Obinna** - kin",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "syn-11",
+   "narration": "Zenith Mobile:GRACE AMADI:cash",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "GRACE AMADI"
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": false,
+   "calls": 2,
+   "s": 35.7,
+   "first_output": "Okay, here's the breakdown of the narration, labeling each bank alert with \"kind\":\n\n*   **Narration:** TRANSFER FROM AMAKA EZE Opay *****5555/TRF|REF999\n",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-12",
+   "narration": "MOMO/IBRAHIM SANI",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "IBRAHIM SANI"
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": false,
+   "calls": 2,
+   "s": 47.2,
+   "first_output": "Okay, let's analyze the narration and assign the correct kind:\n\n*   **Narration: TRANSFER FROM AMAKA EZE Opay *****5555/TRF|REF999** - **kind: customer",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-13",
+   "narration": "brother Kelechi",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "Kelechi"
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": false,
+   "calls": 2,
+   "s": 21.2,
+   "first_output": "",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-14",
+   "narration": "TRANSFER FROM FATIMA BELLO Opay *****9876/TRF|REF000333",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "FATIMA BELLO"
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": false,
+   "calls": 2,
+   "s": 47.3,
+   "first_output": "user please provide the narration again.",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-15",
+   "narration": "Withdrawal abeg",
+   "label": {
+    "kind": "customer_transfer",
+    "from": null
+   },
+   "got": {
+    "kind": "other",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": true,
+   "calls": 1,
+   "s": 15,
+   "first_output": "Narration: Withdrawal abeg\nJSON: {\"kind\":\"other\",\"from\":null}",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-16",
+   "narration": "Wema ALAT: VICTOR OGU to POS",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "VICTOR OGU"
+   },
+   "got": {
+    "kind": "other",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": false,
+   "calls": 2,
+   "s": 42.4,
+   "first_output": "Okay, let's analyze the narration and create the JSON output.\n\nHere's the breakdown and the resulting JSON:\n\n**Analysis:**\n\n*   **Narration:** \"Wema ALAT: VICTO",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "syn-17",
+   "narration": "Moniepoint Rewards Cashout",
+   "label": {
+    "kind": "reward",
+    "from": null
+   },
+   "got": {
+    "kind": "reward",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 1,
+   "s": 23.9,
+   "first_output": "Okay, let's analyze the narration and label it.\n\n**Narration:** \"Moniepoint Cashback\nJSON: {\"kind\":\"reward\",\"from\":null}\n",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-18",
+   "narration": "Moniepoint Cashback Reward",
+   "label": {
+    "kind": "reward",
+    "from": null
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": true,
+   "calls": 2,
+   "s": 25.9,
+   "first_output": "Okay, I'm ready to complete the JSON structure.  Please provide the narration.",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-19",
+   "narration": "Referral bonus - Moniepoint",
+   "label": {
+    "kind": "reward",
+    "from": null
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": true,
+   "calls": 2,
+   "s": 26.7,
+   "first_output": "Please provide the narration text! I need the text you want me to analyze to be able to label the bank alerts.",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-20",
+   "narration": "REVERSAL: TRF FAILED REF000444",
+   "label": {
+    "kind": "reversal",
+    "from": null
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": true,
+   "calls": 2,
+   "s": 46.6,
+   "first_output": "Here's the label for each narration:\n\n*   **Narration:** TRANSFER FROM AMAKA EZE *****5555/TRF|REF999\n    *   **kind:** kind\n    *   **",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-21",
+   "narration": "RVSL/Failed transfer to EMEKA OBI",
+   "label": {
+    "kind": "reversal",
+    "from": null
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": true,
+   "calls": 2,
+   "s": 48.5,
+   "first_output": "Okay, let's analyze the narration and label the bank alerts as requested.\n\n**Narration:** RVSL/Failed transfer to EMEKA OBI\n\n**JSON:**\n\n```json\n{\"kind\":\"reversa",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-22",
+   "narration": "Reversal of failed withdrawal REF000555",
+   "label": {
+    "kind": "reversal",
+    "from": null
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": true,
+   "calls": 2,
+   "s": 36.1,
+   "first_output": "",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "invented_number:0005555"
+    ]
+   ]
+  },
+  {
+   "id": "syn-23",
+   "narration": "AIRTIME TO 08030000000 MTN/ATP|REF000222",
+   "label": {
+    "kind": "own_airtime",
+    "from": null
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": true,
+   "calls": 2,
+   "s": 38.8,
+   "first_output": "Here's the breakdown of the narration classifications:\n\n*   **Narration: TRANSFER FROM AMAKA EZE Opay *****5555/TRF|REF999** - **kind:** customer_transfer, **",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-24",
+   "narration": "AIRTIME TO 09050000000 GLO/ATP|REF000666",
+   "label": {
+    "kind": "own_airtime",
+    "from": null
+   },
+   "got": {
+    "kind": "other",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": true,
+   "calls": 2,
+   "s": 42.4,
+   "first_output": "Here's the breakdown of the narration labels:\n\n*   **Narration: TRANSFER FROM AMAKA EZE** - kind: **transfer**\n*   **Narration: JSON: {\"kind\":\"customer_transfer",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "syn-25",
+   "narration": "DATA TO 08120000000 AIRTEL/ATP|REF000777",
+   "label": {
+    "kind": "own_airtime",
+    "from": null
+   },
+   "got": {
+    "kind": "other",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": true,
+   "calls": 2,
+   "s": 28,
+   "first_output": "Okay, I'm ready. Please provide the narration text.",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "syn-26",
+   "narration": "Own account top-up from GTBank",
+   "label": {
+    "kind": "other",
+    "from": null
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": true,
+   "calls": 2,
+   "s": 36.8,
+   "first_output": "Okay, let's label each narration.\n\nNarration: Transfer FROM AMAKA EZE Opay *****5555/TRF|REF999\nJSON: {\"kind\":\"customer_transfer\",\"from\":\"AMAKA",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-27",
+   "narration": "Settlement from Nomba",
+   "label": {
+    "kind": "other",
+    "from": null
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": true,
+   "calls": 2,
+   "s": 26.5,
+   "first_output": "Please provide the JSON data for the other narration! I need the content of the JSON to label it correctly.\n",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-28",
+   "narration": "loan repayment from Chuka",
+   "label": {
+    "kind": "other",
+    "from": "Chuka"
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": false,
+   "calls": 2,
+   "s": 33.6,
+   "first_output": "Okay, I'm ready to help you label the narration. Please provide the narration text. I'll do my best to categorize it accurately.",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-29",
+   "narration": "Interest payment",
+   "label": {
+    "kind": "other",
+    "from": null
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": true,
+   "calls": 2,
+   "s": 36.3,
+   "first_output": "This is a good start! You're building a dataset of narration with their corresponding JSON labels. Here's a slightly refined version, focusing on clarity and co",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  },
+  {
+   "id": "syn-30",
+   "narration": "test",
+   "label": {
+    "kind": "other",
+    "from": null
+   },
+   "got": {
+    "kind": "unclear",
+    "from": null
+   },
+   "kind_ok": false,
+   "from_ok": true,
+   "calls": 2,
+   "s": 48.1,
+   "first_output": "**Analysis:**\n\nThe provided narration text is a general statement about a transaction, lacking specific details. It doesn't identify a particular customer, tran",
+   "reasons": [
+    [
+     "no_json"
+    ],
+    [
+     "no_json"
+    ]
+   ]
+  }
+ ],
+ "done": true,
+ "dl": "955/955 MB",
+ "load_s": 450.7,
+ "summary": {
+  "n": 30,
+  "kind_acc": 1,
+  "from_acc": 14,
+  "unclear": 20,
+  "retried": 27,
+  "invented_number_rejections": 1,
+  "median_s": 36.3
+ }
+}

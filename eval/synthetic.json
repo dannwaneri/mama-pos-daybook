@@ -1,0 +1,272 @@
+[
+ {
+  "id": "syn-01",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 8:00 AM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 5,150.00\nTransaction Details\nAccount Balance:\nN 17,150.00\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 08:00:00 AM\nNarration:\nTRANSFER FROM CHIDI OKAFOR GTBank *****1234/TRF|REF000111",
+  "narration": "TRANSFER FROM CHIDI OKAFOR GTBank *****1234/TRF|REF000111",
+  "label": {
+   "kind": "customer_transfer",
+   "from": "CHIDI OKAFOR"
+  }
+ },
+ {
+  "id": "syn-02",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 8:17 AM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 10,300.00\nTransaction Details\nAccount Balance:\nN 27,450.00\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 08:17:07 AM\nNarration:\nNIP:ADAEZE NWOSU-for cash",
+  "narration": "NIP:ADAEZE NWOSU-for cash",
+  "label": {
+   "kind": "customer_transfer",
+   "from": "ADAEZE NWOSU"
+  }
+ },
+ {
+  "id": "syn-03",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 8:34 AM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 2,150.00\nTransaction Details\nAccount Balance:\nN 29,600.00\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 08:34:14 AM\nNarration:\nMama Ngozi for 2k withdrawal",
+  "narration": "Mama Ngozi for 2k withdrawal",
+  "label": {
+   "kind": "customer_transfer",
+   "from": "Mama Ngozi"
+  }
+ },
+ {
+  "id": "syn-04",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 8:51 AM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 20,600.00\nTransaction Details\nAccount Balance:\nN 50,200.00\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 08:51:21 AM\nNarration:\nTRF FRM EMEKA OBI TO POS VIA OPAY REF:XYZ0001",
+  "narration": "TRF FRM EMEKA OBI TO POS VIA OPAY REF:XYZ0001",
+  "label": {
+   "kind": "customer_transfer",
+   "from": "EMEKA OBI"
+  }
+ },
+ {
+  "id": "syn-05",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 9:08 AM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 3,150.00\nTransaction Details\nAccount Balance:\nN 53,350.00\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 09:08:28 AM\nNarration:\nKuda/TUNDE BAKARE/cash pls",
+  "narration": "Kuda/TUNDE BAKARE/cash pls",
+  "label": {
+   "kind": "customer_transfer",
+   "from": "TUNDE BAKARE"
+  }
+ },
+ {
+  "id": "syn-06",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 9:25 AM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 15,450.00\nTransaction Details\nAccount Balance:\nN 68,800.00\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 09:25:35 AM\nNarration:\nFIRST BANK MOB TRF FROM NKECHI EZE",
+  "narration": "FIRST BANK MOB TRF FROM NKECHI EZE",
+  "label": {
+   "kind": "customer_transfer",
+   "from": "NKECHI EZE"
+  }
+ },
+ {
+  "id": "syn-07",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 9:42 AM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 5,150.00\nTransaction Details\nAccount Balance:\nN 73,950.00\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 09:42:42 AM\nNarration:\nfrom Ifeoma",
+  "narration": "from Ifeoma",
+  "label": {
+   "kind": "customer_transfer",
+   "from": "Ifeoma"
+  }
+ },
+ {
+  "id": "syn-08",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 9:59 AM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 7,650.00\nTransaction Details\nAccount Balance:\nN 81,600.00\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 09:59:49 AM\nNarration:\nAccess-BLESSING UDO-POS",
+  "narration": "Access-BLESSING UDO-POS",
+  "label": {
+   "kind": "customer_transfer",
+   "from": "BLESSING UDO"
+  }
+ },
+ {
+  "id": "syn-09",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 10:16 AM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 1,150.00\nTransaction Details\nAccount Balance:\nN 82,750.00\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 10:16:56 AM\nNarration:\nPalmPay transfer SAMUEL AKPAN",
+  "narration": "PalmPay transfer SAMUEL AKPAN",
+  "label": {
+   "kind": "customer_transfer",
+   "from": "SAMUEL AKPAN"
+  }
+ },
+ {
+  "id": "syn-10",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 10:33 AM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 50,900.00\nTransaction Details\nAccount Balance:\nN 133,650.00\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 10:33:03 AM\nNarration:\nUBA/OKON ETIM/school fees cash",
+  "narration": "UBA/OKON ETIM/school fees cash",
+  "label": {
+   "kind": "customer_transfer",
+   "from": "OKON ETIM"
+  }
+ },
+ {
+  "id": "syn-11",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 10:50 AM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 4,150.00\nTransaction Details\nAccount Balance:\nN 137,800.00\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 10:50:10 AM\nNarration:\nZenith Mobile:GRACE AMADI:cash",
+  "narration": "Zenith Mobile:GRACE AMADI:cash",
+  "label": {
+   "kind": "customer_transfer",
+   "from": "GRACE AMADI"
+  }
+ },
+ {
+  "id": "syn-12",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 11:07 AM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 10,300.00\nTransaction Details\nAccount Balance:\nN 148,100.00\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 11:07:17 AM\nNarration:\nMOMO/IBRAHIM SANI",
+  "narration": "MOMO/IBRAHIM SANI",
+  "label": {
+   "kind": "customer_transfer",
+   "from": "IBRAHIM SANI"
+  }
+ },
+ {
+  "id": "syn-13",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 11:24 AM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 6,150.00\nTransaction Details\nAccount Balance:\nN 154,250.00\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 11:24:24 AM\nNarration:\nbrother Kelechi",
+  "narration": "brother Kelechi",
+  "label": {
+   "kind": "customer_transfer",
+   "from": "Kelechi"
+  }
+ },
+ {
+  "id": "syn-14",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 11:41 AM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 25,750.00\nTransaction Details\nAccount Balance:\nN 180,000.00\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 11:41:31 AM\nNarration:\nTRANSFER FROM FATIMA BELLO Opay *****9876/TRF|REF000333",
+  "narration": "TRANSFER FROM FATIMA BELLO Opay *****9876/TRF|REF000333",
+  "label": {
+   "kind": "customer_transfer",
+   "from": "FATIMA BELLO"
+  }
+ },
+ {
+  "id": "syn-15",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 11:58 AM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 2,150.00\nTransaction Details\nAccount Balance:\nN 182,150.00\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 11:58:38 AM\nNarration:\nWithdrawal abeg",
+  "narration": "Withdrawal abeg",
+  "label": {
+   "kind": "customer_transfer",
+   "from": null
+  }
+ },
+ {
+  "id": "syn-16",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 12:15 PM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 8,150.00\nTransaction Details\nAccount Balance:\nN 190,300.00\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 12:15:45 PM\nNarration:\nWema ALAT: VICTOR OGU to POS",
+  "narration": "Wema ALAT: VICTOR OGU to POS",
+  "label": {
+   "kind": "customer_transfer",
+   "from": "VICTOR OGU"
+  }
+ },
+ {
+  "id": "syn-17",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 12:32 PM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 3,440.25\nTransaction Details\nAccount Balance:\nN 193,740.25\nAccount Number:\nXXXX\nDate & Time:\n16 Oct, 2026 | 12:32:52 PM\nNarration:\nMoniepoint Rewards Cashout",
+  "narration": "Moniepoint Rewards Cashout",
+  "label": {
+   "kind": "reward",
+   "from": null
+  }
+ },
+ {
+  "id": "syn-18",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 12:49 PM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 512.00\nTransaction Details\nAccount Balance:\nN 194,252.25\nAccount Number:\nXXXX\nDate & Time:\n16 Oct, 2026 | 12:49:59 PM\nNarration:\nMoniepoint Cashback Reward",
+  "narration": "Moniepoint Cashback Reward",
+  "label": {
+   "kind": "reward",
+   "from": null
+  }
+ },
+ {
+  "id": "syn-19",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 1:06 PM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 1,200.00\nTransaction Details\nAccount Balance:\nN 195,452.25\nAccount Number:\nXXXX\nDate & Time:\n16 Oct, 2026 | 01:06:06 PM\nNarration:\nReferral bonus - Moniepoint",
+  "narration": "Referral bonus - Moniepoint",
+  "label": {
+   "kind": "reward",
+   "from": null
+  }
+ },
+ {
+  "id": "syn-20",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 1:23 PM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 5,150.00\nTransaction Details\nAccount Balance:\nN 200,602.25\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 01:23:13 PM\nNarration:\nREVERSAL: TRF FAILED REF000444",
+  "narration": "REVERSAL: TRF FAILED REF000444",
+  "label": {
+   "kind": "reversal",
+   "from": null
+  }
+ },
+ {
+  "id": "syn-21",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 1:40 PM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 10,300.00\nTransaction Details\nAccount Balance:\nN 210,902.25\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 01:40:20 PM\nNarration:\nRVSL/Failed transfer to EMEKA OBI",
+  "narration": "RVSL/Failed transfer to EMEKA OBI",
+  "label": {
+   "kind": "reversal",
+   "from": null
+  }
+ },
+ {
+  "id": "syn-22",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 1:57 PM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 2,000.00\nTransaction Details\nAccount Balance:\nN 212,902.25\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 01:57:27 PM\nNarration:\nReversal of failed withdrawal REF000555",
+  "narration": "Reversal of failed withdrawal REF000555",
+  "label": {
+   "kind": "reversal",
+   "from": null
+  }
+ },
+ {
+  "id": "syn-23",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 2:14 PM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 100.00\nTransaction Details\nAccount Balance:\nN 213,002.25\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint VAS Transit Account\nDate & Time:\n16 Oct, 2026 | 02:14:34 PM\nNarration:\nAIRTIME TO 08030000000 MTN/ATP|REF000222",
+  "narration": "AIRTIME TO 08030000000 MTN/ATP|REF000222",
+  "label": {
+   "kind": "own_airtime",
+   "from": null
+  }
+ },
+ {
+  "id": "syn-24",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 2:31 PM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 500.00\nTransaction Details\nAccount Balance:\nN 213,502.25\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint VAS Transit Account\nDate & Time:\n16 Oct, 2026 | 02:31:41 PM\nNarration:\nAIRTIME TO 09050000000 GLO/ATP|REF000666",
+  "narration": "AIRTIME TO 09050000000 GLO/ATP|REF000666",
+  "label": {
+   "kind": "own_airtime",
+   "from": null
+  }
+ },
+ {
+  "id": "syn-25",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 2:48 PM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 1,000.00\nTransaction Details\nAccount Balance:\nN 214,502.25\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint VAS Transit Account\nDate & Time:\n16 Oct, 2026 | 02:48:48 PM\nNarration:\nDATA TO 08120000000 AIRTEL/ATP|REF000777",
+  "narration": "DATA TO 08120000000 AIRTEL/ATP|REF000777",
+  "label": {
+   "kind": "own_airtime",
+   "from": null
+  }
+ },
+ {
+  "id": "syn-26",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 3:05 PM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 30,000.00\nTransaction Details\nAccount Balance:\nN 244,502.25\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 03:05:55 PM\nNarration:\nOwn account top-up from GTBank",
+  "narration": "Own account top-up from GTBank",
+  "label": {
+   "kind": "other",
+   "from": null
+  }
+ },
+ {
+  "id": "syn-27",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 3:22 PM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 45,000.00\nTransaction Details\nAccount Balance:\nN 289,502.25\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 03:22:02 PM\nNarration:\nSettlement from Nomba",
+  "narration": "Settlement from Nomba",
+  "label": {
+   "kind": "other",
+   "from": null
+  }
+ },
+ {
+  "id": "syn-28",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 3:39 PM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 12,000.00\nTransaction Details\nAccount Balance:\nN 301,502.25\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 03:39:09 PM\nNarration:\nloan repayment from Chuka",
+  "narration": "loan repayment from Chuka",
+  "label": {
+   "kind": "other",
+   "from": "Chuka"
+  }
+ },
+ {
+  "id": "syn-29",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 3:56 PM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 750.00\nTransaction Details\nAccount Balance:\nN 302,252.25\nAccount Number:\nXXXX\nDate & Time:\n16 Oct, 2026 | 03:56:16 PM\nNarration:\nInterest payment",
+  "narration": "Interest payment",
+  "label": {
+   "kind": "other",
+   "from": null
+  }
+ },
+ {
+  "id": "syn-30",
+  "text": "Moniepoint <no-reply@moniepoint.com> Fri, Oct 16, 2026 at 4:13 PM\nTo: <EMAIL>\nHi NAME ,\nWe wish to inform you that a credit transaction occurred on your account with\nus.\nCredit Amount\n 9,999.00\nTransaction Details\nAccount Balance:\nN 312,251.25\nAccount Number:\nXXXX\nSender's Name:\nfrom Moniepoint Transfer Transit Account\nDate & Time:\n16 Oct, 2026 | 04:13:23 PM\nNarration:\ntest",
+  "narration": "test",
+  "label": {
+   "kind": "other",
+   "from": null
+  }
+ }
+]

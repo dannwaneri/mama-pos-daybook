@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>POS Day-book</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b5f46">
+<style>
+  /* Layout: one column, three tabs along the bottom (Paste / Did it land? / End of day), thumb-reachable. */
+  :root {
+    --bg: #f4f5f2; --card: #ffffff; --ink: #17201b; --muted: #5a665f; --line: #d3d9d4;
+    --brand: #0b5f46; --brand-ink: #ffffff; --soft: #e2efe9;
+    --ok: #12734f; --ok-bg: #dff3ea; --warn: #8a5a00; --warn-bg: #fbefd6; --bad: #a3271b; --bad-bg: #fbe2df;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+    --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#101513; --card:#18201c; --ink:#e7ece9; --muted:#9ba7a0; --line:#2c3631; --brand:#3fbf8f; --brand-ink:#08130e; --soft:#173027;
+      --ok:#5bd3a2; --ok-bg:#123227; --warn:#f0c26a; --warn-bg:#33280f; --bad:#ff8f84; --bad-bg:#3a1714; color-scheme: dark; }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.45 var(--sans); }
+  header { padding: calc(env(safe-area-inset-top, 0px) + 14px) 16px 8px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  header h1 { margin: 0; font-size: 1.15rem; }
+  header .model { font: 600 .78rem var(--mono); color: var(--muted); }
+  main { padding: 0 16px 96px; max-width: 560px; margin: 0 auto; display: grid; gap: 14px; }
+  section[hidden] { display: none !important; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; display: grid; gap: 10px; min-width: 0; }
+  h2 { margin: 0; font-size: 1rem; }
+  textarea, input { width: 100%; font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+  textarea { min-height: 120px; resize: vertical; font-family: var(--mono); font-size: .85rem; }
+  button { font: inherit; font-weight: 700; border: 0; border-radius: 999px; padding: 12px 18px; cursor: pointer; }
+  .primary { background: var(--brand); color: var(--brand-ink); }
+  .ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  button:disabled { opacity: .5; }
+  :focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
+  .row { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center; padding: 8px 0; border-top: 1px solid var(--line); }
+  .row:first-child { border-top: 0; }
+  .t { font: 600 .82rem var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+  .amt { font: 700 1rem var(--mono); font-variant-numeric: tabular-nums; }
+  .who { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .92rem; }
+  .chip { font: 600 .7rem var(--sans); letter-spacing: .04em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; background: var(--soft); color: var(--brand); white-space: nowrap; }
+  .chip.unclear, .chip.pending { background: var(--warn-bg); color: var(--warn); }
+  .chip.reversal { background: var(--bad-bg); color: var(--bad); }
+  .verdict { font-size: 1.4rem; font-weight: 800; }
+  .verdict.landed { color: var(--ok); } .verdict.not_seen { color: var(--bad); } .verdict.ambiguous { color: var(--warn); }
+  .muted { color: var(--muted); font-size: .9rem; }
+  .big { font: 800 1.6rem var(--mono); font-variant-numeric: tabular-nums; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat { background: var(--bg); border-radius: 10px; padding: 10px; }
+  .stat b { display: block; font: 700 1.1rem var(--mono); }
+  .status { font: .85rem var(--mono); color: var(--muted); min-height: 1.2em; white-space: pre-wrap; }
+  pre.wa { margin: 0; white-space: pre-wrap; font: .85rem var(--mono); background: var(--bg); border-radius: 10px; padding: 10px; }
+  nav { position: fixed; left: 0; right: 0; bottom: 0; background: var(--card); border-top: 1px solid var(--line);
+        display: grid; grid-template-columns: repeat(3, 1fr); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  nav button { border-radius: 0; background: transparent; color: var(--muted); padding: 14px 6px; font-size: .9rem; }
+  nav button[aria-current="page"] { color: var(--brand); box-shadow: inset 0 3px 0 var(--brand); }
+  .daybar { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; }
+  .daybar input { width: auto; margin: 0; }
+  .daybar button { padding: 8px 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>POS Day-book</h1>
+  <span class="model" id="modelState">Gemma: not loaded</span>
+</header>
+
+<main>
+  <div class="daybar">
+    <label for="viewDay" class="muted">Day</label>
+    <input type="date" id="viewDay">
+    <button class="ghost" id="toToday" type="button" hidden>Today</button>
+  </div>
+  <section id="tab-paste">
+    <div class="card">
+      <h2>Paste alerts</h2>
+      <label class="muted" for="paste">Copy one or more Moniepoint credit alerts and paste them here.</label>
+      <textarea id="paste" placeholder="Hi … ,&#10;We wish to inform you that a credit transaction occurred…"></textarea>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="primary" id="add" type="button">Add alerts</button>
+        <button class="ghost" id="loadModel" type="button">Load Gemma (859 MB, once, use Wi-Fi, needs a GPU)</button>
+      </div>
+      <p class="status" id="dlStatus" role="status"></p>
+      <button class="ghost" id="copyLog" type="button" hidden>Copy download log</button>
+      <p class="status" id="addStatus" role="status"></p>
+    </div>
+    <div class="card">
+      <h2 id="todayTitle">Today</h2>
+      <div id="rows"><p class="muted">No alerts yet today. Paste one above.</p></div>
+    </div>
+  </section>
+
+  <section id="tab-land" hidden>
+    <div class="card">
+      <h2>Did it land?</h2>
+      <label for="landAmt">Amount the customer says they sent (₦)</label>
+      <input id="landAmt" inputmode="decimal" placeholder="5150">
+      <label for="landName">Name (optional)</label>
+      <input id="landName" placeholder="e.g. Chidi">
+      <button class="primary" id="check" type="button">Check</button>
+    </div>
+    <div class="card" id="landResult" hidden></div>
+  </section>
+
+  <section id="tab-day" hidden>
+    <div class="card">
+      <h2 id="dayTitle">End of day</h2>
+      <div class="grid2">
+        <div class="stat">Money in <b id="dIn">₦0</b></div>
+        <div class="stat">Charges (estimate) <b id="dCh">₦0</b></div>
+        <div class="stat">Alerts <b id="dRows">0</b></div>
+        <div class="stat">Customer transfers <b id="dTr">0</b></div>
+      </div>
+      <p class="muted">Charges use your table: ₦<span id="per">150</span> for each ₦5,000 or part of it. Alerts show money in, not the cash you paid out, so this is an estimate.</p>
+    </div>
+    <div class="card">
+      <h2>Check these</h2>
+      <div id="toCheck"><p class="muted">Nothing to check.</p></div>
+    </div>
+    <div class="card">
+      <h2>For WhatsApp</h2>
+      <pre class="wa" id="wa"></pre>
+      <button class="primary" id="copyWa" type="button">Copy for WhatsApp</button>
+      <p class="status" id="waStatus" role="status"></p>
+    </div>
+  </section>
+</main>
+
+<nav aria-label="Screens">
+  <button type="button" data-tab="paste" aria-current="page">Paste</button>
+  <button type="button" data-tab="land">Did it land?</button>
+  <button type="button" data-tab="day">End of day</button>
+</nav>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

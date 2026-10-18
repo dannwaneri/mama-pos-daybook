@@ -1,0 +1,7 @@
+private/
+deploy/
+deploy-app/
+node_modules/
+.wrangler/
+deploy-prod/
+bench/vendor/

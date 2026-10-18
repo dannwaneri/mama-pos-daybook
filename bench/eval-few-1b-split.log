@@ -1,0 +1,604 @@
+5 s  Loading onnx-community/gemma-3-1b-it-ONNX (q4) on webgpu, prompt=few…
+17 s  Loading onnx-community/gemma-3-1b-it-ONNX (q4) on webgpu, prompt=few… | Loaded in 15.9 s. Running 30 narrations.
+42 s  Loaded in 15.9 s. Running 30 narrations. | syn-01 ✓kind ✓from 25.1s  got=customer_transfer/CHIDI OKAFOR
+68 s  syn-01 ✓kind ✓from 25.1s  got=customer_transfer/CHIDI OKAFOR | syn-02 ✓kind ✗from 23.2s  got=customer_transfer/NIP:ADAEZE NWOSU
+88 s  syn-02 ✓kind ✗from 23.2s  got=customer_transfer/NIP:ADAEZE NWOSU | syn-03 ✓kind ✓from 20s  got=customer_transfer/Mama Ngozi
+108 s  syn-03 ✓kind ✓from 20s  got=customer_transfer/Mama Ngozi | syn-04 ✓kind ✓from 21.9s  got=customer_transfer/EMEKA OBI
+133 s  syn-04 ✓kind ✓from 21.9s  got=customer_transfer/EMEKA OBI | syn-05 ✓kind ✗from 22.6s  got=customer_transfer/Kuda/TUNDE BAKARE
+153 s  syn-05 ✓kind ✗from 22.6s  got=customer_transfer/Kuda/TUNDE BAKARE | syn-06 ✓kind ✓from 21.1s  got=customer_transfer/NKECHI EZE
+174 s  syn-06 ✓kind ✓from 21.1s  got=customer_transfer/NKECHI EZE | syn-07 ✓kind ✓from 19.2s  got=customer_transfer/Ifeoma
+194 s  syn-07 ✓kind ✓from 19.2s  got=customer_transfer/Ifeoma | syn-08 ✓kind ✗from 21.5s  got=customer_transfer/Access-BLESSING UDO
+214 s  syn-08 ✓kind ✗from 21.5s  got=customer_transfer/Access-BLESSING UDO | syn-09 ✓kind ✓from 19.8s  got=customer_transfer/SAMUEL AKPAN
+229 s  syn-09 ✓kind ✓from 19.8s  got=customer_transfer/SAMUEL AKPAN | syn-10 ✓kind ✗from 17.8s  got=customer_transfer/null
+250 s  syn-10 ✓kind ✗from 17.8s  got=customer_transfer/null | syn-11 ✓kind ✓from 19.7s  got=customer_transfer/Grace Amadi
+270 s  syn-11 ✓kind ✓from 19.7s  got=customer_transfer/Grace Amadi | syn-12 ✓kind ✗from 21.3s  got=customer_transfer/MOMO/IBRAHIM SANI
+290 s  syn-12 ✓kind ✗from 21.3s  got=customer_transfer/MOMO/IBRAHIM SANI | syn-13 ✓kind ✓from 19.4s  got=customer_transfer/Kelechi
+315 s  syn-13 ✓kind ✓from 19.4s  got=customer_transfer/Kelechi | syn-14 ✓kind ✓from 21.1s  got=customer_transfer/FATIMA BELLO
+Warning: Detected unsettled top-level await at file:///C:/Users/DELL/pos-daybook/bench/drive.mjs:40
+  const st = await evalJs(`JSON.stringify({log: (document.getElementById('log')||{}).textContent?.split(String.fromCharCode(10)).slice(-2), r: window.__results, e: window.__eval})`);
+             ^
+
+
+
+(runner link dropped after syn-14; full result read from the page afterwards)
+{
+ "model": {
+  "id": "onnx-community/gemma-3-1b-it-ONNX",
+  "dtype": "q4"
+ },
+ "style": "few",
+ "split": true,
+ "device": "webgpu",
+ "isolated": false,
+ "items": [
+  {
+   "id": "syn-01",
+   "narration": "TRANSFER FROM CHIDI OKAFOR GTBank *****1234/TRF|REF000111",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "CHIDI OKAFOR"
+   },
+   "got": {
+    "kind": "customer_transfer",
+    "from": "CHIDI OKAFOR"
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 1,
+   "s": 25.1,
+   "first_output": "{\"kind\":\"customer_transfer\",\"from\":\"CHIDI OKAFOR\"}\n",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-02",
+   "narration": "NIP:ADAEZE NWOSU-for cash",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "ADAEZE NWOSU"
+   },
+   "got": {
+    "kind": "customer_transfer",
+    "from": "NIP:ADAEZE NWOSU"
+   },
+   "kind_ok": true,
+   "from_ok": false,
+   "calls": 1,
+   "s": 23.2,
+   "first_output": "{\"kind\":\"customer_transfer\",\"from\":\"NIP:ADAEZE NWOSU\"}\n",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-03",
+   "narration": "Mama Ngozi for 2k withdrawal",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "Mama Ngozi"
+   },
+   "got": {
+    "kind": "customer_transfer",
+    "from": "Mama Ngozi"
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 1,
+   "s": 20,
+   "first_output": "{\"kind\":\"customer_transfer\",\"from\":\"Mama Ngozi\"}\n",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-04",
+   "narration": "TRF FRM EMEKA OBI TO POS VIA OPAY REF:XYZ0001",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "EMEKA OBI"
+   },
+   "got": {
+    "kind": "customer_transfer",
+    "from": "EMEKA OBI"
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 1,
+   "s": 21.9,
+   "first_output": "{\"kind\":\"customer_transfer\",\"from\":\"EMEKA OBI\"}\n",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-05",
+   "narration": "Kuda/TUNDE BAKARE/cash pls",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "TUNDE BAKARE"
+   },
+   "got": {
+    "kind": "customer_transfer",
+    "from": "Kuda/TUNDE BAKARE"
+   },
+   "kind_ok": true,
+   "from_ok": false,
+   "calls": 1,
+   "s": 22.6,
+   "first_output": "{\"kind\":\"customer_transfer\",\"from\":\"Kuda/TUNDE BAKARE\"}\n",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-06",
+   "narration": "FIRST BANK MOB TRF FROM NKECHI EZE",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "NKECHI EZE"
+   },
+   "got": {
+    "kind": "customer_transfer",
+    "from": "NKECHI EZE"
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 1,
+   "s": 21.1,
+   "first_output": "{\"kind\":\"customer_transfer\",\"from\":\"NKECHI EZE\"}\n",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-07",
+   "narration": "from Ifeoma",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "Ifeoma"
+   },
+   "got": {
+    "kind": "customer_transfer",
+    "from": "Ifeoma"
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 1,
+   "s": 19.2,
+   "first_output": "{\"kind\":\"customer_transfer\",\"from\":\"Ifeoma\"}",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-08",
+   "narration": "Access-BLESSING UDO-POS",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "BLESSING UDO"
+   },
+   "got": {
+    "kind": "customer_transfer",
+    "from": "Access-BLESSING UDO"
+   },
+   "kind_ok": true,
+   "from_ok": false,
+   "calls": 1,
+   "s": 21.5,
+   "first_output": "{\"kind\":\"customer_transfer\",\"from\":\"Access-BLESSING UDO\"}\n",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-09",
+   "narration": "PalmPay transfer SAMUEL AKPAN",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "SAMUEL AKPAN"
+   },
+   "got": {
+    "kind": "customer_transfer",
+    "from": "SAMUEL AKPAN"
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 1,
+   "s": 19.8,
+   "first_output": "{\"kind\":\"customer_transfer\",\"from\":\"SAMUEL AKPAN\"}",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-10",
+   "narration": "UBA/OKON ETIM/school fees cash",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "OKON ETIM"
+   },
+   "got": {
+    "kind": "customer_transfer",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": false,
+   "calls": 1,
+   "s": 17.8,
+   "first_output": "{\"kind\":\"other\",\"from\":null}\n",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-11",
+   "narration": "Zenith Mobile:GRACE AMADI:cash",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "GRACE AMADI"
+   },
+   "got": {
+    "kind": "customer_transfer",
+    "from": "Grace Amadi"
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 1,
+   "s": 19.7,
+   "first_output": "{\"kind\":\"customer_transfer\",\"from\":\"Grace Amadi\"}\n",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-12",
+   "narration": "MOMO/IBRAHIM SANI",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "IBRAHIM SANI"
+   },
+   "got": {
+    "kind": "customer_transfer",
+    "from": "MOMO/IBRAHIM SANI"
+   },
+   "kind_ok": true,
+   "from_ok": false,
+   "calls": 1,
+   "s": 21.3,
+   "first_output": "{\"kind\":\"other\",\"from\":\"MOMO/IBRAHIM SANI\"}",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-13",
+   "narration": "brother Kelechi",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "Kelechi"
+   },
+   "got": {
+    "kind": "customer_transfer",
+    "from": "Kelechi"
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 1,
+   "s": 19.4,
+   "first_output": "{\"kind\":\"customer_transfer\",\"from\":\"Kelechi\"}\n",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-14",
+   "narration": "TRANSFER FROM FATIMA BELLO Opay *****9876/TRF|REF000333",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "FATIMA BELLO"
+   },
+   "got": {
+    "kind": "customer_transfer",
+    "from": "FATIMA BELLO"
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 1,
+   "s": 21.1,
+   "first_output": "{\"kind\":\"customer_transfer\",\"from\":\"FATIMA BELLO\"}\n",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-15",
+   "narration": "Withdrawal abeg",
+   "label": {
+    "kind": "customer_transfer",
+    "from": null
+   },
+   "got": {
+    "kind": "customer_transfer",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 1,
+   "s": 302.7,
+   "first_output": "{\"kind\":\"other\",\"from\":null}\n",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-16",
+   "narration": "Wema ALAT: VICTOR OGU to POS",
+   "label": {
+    "kind": "customer_transfer",
+    "from": "VICTOR OGU"
+   },
+   "got": {
+    "kind": "customer_transfer",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": false,
+   "calls": 1,
+   "s": 3.7,
+   "first_output": "{\"kind\":\"customer_transfer\",\"from\":\"Wema ALAT\"}\n",
+   "reasons": [
+    []
+   ]
+  },
+  {
+   "id": "syn-17",
+   "narration": "Moniepoint Rewards Cashout",
+   "label": {
+    "kind": "reward",
+    "from": null
+   },
+   "got": {
+    "kind": "reward",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 0,
+   "s": 0,
+   "reasons": []
+  },
+  {
+   "id": "syn-18",
+   "narration": "Moniepoint Cashback Reward",
+   "label": {
+    "kind": "reward",
+    "from": null
+   },
+   "got": {
+    "kind": "reward",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 0,
+   "s": 0,
+   "reasons": []
+  },
+  {
+   "id": "syn-19",
+   "narration": "Referral bonus - Moniepoint",
+   "label": {
+    "kind": "reward",
+    "from": null
+   },
+   "got": {
+    "kind": "reward",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 0,
+   "s": 0,
+   "reasons": []
+  },
+  {
+   "id": "syn-20",
+   "narration": "REVERSAL: TRF FAILED REF000444",
+   "label": {
+    "kind": "reversal",
+    "from": null
+   },
+   "got": {
+    "kind": "reversal",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 0,
+   "s": 0,
+   "reasons": []
+  },
+  {
+   "id": "syn-21",
+   "narration": "RVSL/Failed transfer to EMEKA OBI",
+   "label": {
+    "kind": "reversal",
+    "from": null
+   },
+   "got": {
+    "kind": "reversal",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 0,
+   "s": 0,
+   "reasons": []
+  },
+  {
+   "id": "syn-22",
+   "narration": "Reversal of failed withdrawal REF000555",
+   "label": {
+    "kind": "reversal",
+    "from": null
+   },
+   "got": {
+    "kind": "reversal",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 0,
+   "s": 0,
+   "reasons": []
+  },
+  {
+   "id": "syn-23",
+   "narration": "AIRTIME TO 08030000000 MTN/ATP|REF000222",
+   "label": {
+    "kind": "own_airtime",
+    "from": null
+   },
+   "got": {
+    "kind": "own_airtime",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 0,
+   "s": 0,
+   "reasons": []
+  },
+  {
+   "id": "syn-24",
+   "narration": "AIRTIME TO 09050000000 GLO/ATP|REF000666",
+   "label": {
+    "kind": "own_airtime",
+    "from": null
+   },
+   "got": {
+    "kind": "own_airtime",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 0,
+   "s": 0,
+   "reasons": []
+  },
+  {
+   "id": "syn-25",
+   "narration": "DATA TO 08120000000 AIRTEL/ATP|REF000777",
+   "label": {
+    "kind": "own_airtime",
+    "from": null
+   },
+   "got": {
+    "kind": "own_airtime",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 0,
+   "s": 0,
+   "reasons": []
+  },
+  {
+   "id": "syn-26",
+   "narration": "Own account top-up from GTBank",
+   "label": {
+    "kind": "other",
+    "from": null
+   },
+   "got": {
+    "kind": "other",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 0,
+   "s": 0,
+   "reasons": []
+  },
+  {
+   "id": "syn-27",
+   "narration": "Settlement from Nomba",
+   "label": {
+    "kind": "other",
+    "from": null
+   },
+   "got": {
+    "kind": "other",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 0,
+   "s": 0,
+   "reasons": []
+  },
+  {
+   "id": "syn-28",
+   "narration": "loan repayment from Chuka",
+   "label": {
+    "kind": "other",
+    "from": "Chuka"
+   },
+   "got": {
+    "kind": "other",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": false,
+   "calls": 0,
+   "s": 0,
+   "reasons": []
+  },
+  {
+   "id": "syn-29",
+   "narration": "Interest payment",
+   "label": {
+    "kind": "other",
+    "from": null
+   },
+   "got": {
+    "kind": "other",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 0,
+   "s": 0,
+   "reasons": []
+  },
+  {
+   "id": "syn-30",
+   "narration": "test",
+   "label": {
+    "kind": "other",
+    "from": null
+   },
+   "got": {
+    "kind": "other",
+    "from": null
+   },
+   "kind_ok": true,
+   "from_ok": true,
+   "calls": 0,
+   "s": 0,
+   "reasons": []
+  }
+ ],
+ "done": true,
+ "load_s": 15.9,
+ "summary": {
+  "n": 30,
+  "kind_acc": 30,
+  "from_acc": 23,
+  "unclear": 0,
+  "retried": 0,
+  "invented_number_rejections": 0,
+  "median_s": 17.8
+ }
+}

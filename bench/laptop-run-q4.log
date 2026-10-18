@@ -1,0 +1,33 @@
+5 s    tokenizer.json: 100% (20.3 of 20 MB, 3 s) |   3 s · done tokenizer.json
+206 s    205 s · ready  | Loaded in 205.4 s.
+221 s  Loaded in 205.4 s. | #1: 13 s
+226 s  #1: 13 s | #2: 5.1 s
+231 s  #3: 4.6 s | Slowest: 13 s → gate PASS (≤ 15 s).
+{
+ "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+ "webgpu": true,
+ "cores": 8,
+ "memGB": 16,
+ "runs": [
+  {
+   "narration": "TRANSFER FROM CHIDI OKAFOR GTBank *****1234/TRF|REF000111",
+   "s": 13,
+   "text": "```json\n\"kind\": one of \"customer_transfer\",\"own_airtime\",\"reward\",\"reversal\",\"other\", \"from\": the sender's name copied exactly from the narration, or null}.\n\"\"\"\n\"\"\"\nWe"
+  },
+  {
+   "narration": "Mama Ngozi for 5k withdrawal",
+   "s": 5.1,
+   "text": "```json\n\"kind\": one of \"customer_transfer\",\"own_airtime\",\"reward\",\"reversal\",\"other\", \"from\": the sender's name copied exactly from the narration, or null}.\n```"
+  },
+  {
+   "narration": "AIRTIME TO 0803XXXXXXX MTN/ATP|REF000222",
+   "s": 4.6,
+   "text": "```json\n\"\"\"\nRecommendation:\n\"\"\"\n\"\"\"\nWe're looking for a new ATM in the city. We're looking for a new ATM in the city. We're looking for a new ATM in the city."
+  }
+ ],
+ "model": "onnx-community/gemma-3-270m-it-ONNX",
+ "dtype": "q4",
+ "device": "webgpu",
+ "load_s": 205.4,
+ "gate_pass": true
+}

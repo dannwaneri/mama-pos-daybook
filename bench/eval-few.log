@@ -1,0 +1,16 @@
+5 s  Loading onnx-community/gemma-3-270m-it-ONNX (q4) on webgpu, prompt=few… | Loaded in 3.1 s. Running 30 narrations.
+10 s  Loaded in 3.1 s. Running 30 narrations. | syn-01 ✗kind ✗from 5.1s  got=unclear/null
+20 s  syn-01 ✗kind ✗from 5.1s  got=unclear/null | syn-02 ✗kind ✗from 7s  got=unclear/null
+25 s  syn-02 ✗kind ✗from 7s  got=unclear/null | syn-03 ✗kind ✗from 5.2s  got=unclear/null
+30 s  syn-04 ✗kind ✗from 4.3s  got=unclear/null | syn-05 ✗kind ✗from 3.9s  got=unclear/null
+35 s  syn-05 ✗kind ✗from 3.9s  got=unclear/null | syn-06 ✗kind ✗from 3s  got=unclear/null
+40 s  syn-07 ✗kind ✗from 3.3s  got=unclear/null | syn-08 ✗kind ✗from 3.7s  got=unclear/null
+46 s  syn-08 ✗kind ✗from 3.7s  got=unclear/null | syn-09 ✗kind ✗from 3.7s  got=unclear/null
+51 s  syn-09 ✗kind ✗from 3.7s  got=unclear/null | syn-10 ✗kind ✗from 5.2s  got=unclear/null
+56 s  syn-10 ✗kind ✗from 5.2s  got=unclear/null | syn-11 ✗kind ✗from 4s  got=unclear/null
+Warning: Detected unsettled top-level await at file:///C:/Users/DELL/pos-daybook/bench/drive.mjs:35
+  const st = await evalJs(`JSON.stringify({log: (document.getElementById('log')||{}).textContent?.split(String.fromCharCode(10)).slice(-2), r: window.__results, e: window.__eval})`);
+             ^
+
+
+

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gemma phone speed test</title>
+<style>
+  :root { --bg:#f5f6f4; --fg:#18201c; --muted:#5b665f; --line:#cdd3cf; --accent:#0b6b4f; --card:#fff; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#111513; --fg:#e6ebe8; --muted:#9aa59f; --line:#2f3833; --accent:#4fc79e; --card:#181e1b; color-scheme: dark; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui, "Segoe UI", sans-serif; }
+  main { max-width:560px; margin:0 auto; padding:16px; display:grid; gap:14px; }
+  h1 { font-size:1.3rem; margin:0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px; display:grid; gap:10px; }
+  label { font-weight:600; }
+  select { width:100%; max-width:100%; }
+  .card { min-width:0; }
+  select, button { font:inherit; padding:10px 12px; border-radius:10px; border:1px solid var(--line); background:var(--bg); color:var(--fg); }
+  button.go { background:var(--accent); color:#fff; border:0; font-weight:700; }
+  button:disabled { opacity:.5; }
+  pre { margin:0; white-space:pre-wrap; word-break:break-word; font:13px/1.45 ui-monospace, Consolas, monospace; }
+  .muted { color:var(--muted); font-size:.92rem; }
+  table { width:100%; border-collapse:collapse; font-size:.9rem; }
+  td, th { border-bottom:1px solid var(--line); padding:6px 4px; text-align:left; vertical-align:top; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Gemma phone speed test</h1>
+  <p class="muted">Task 1 gate: one narration classified in 15 s or less on the phone. Nothing downloads until you press Start. Narrations below are synthetic (fake names).</p>
+
+  <div class="card">
+    <label for="model">Model</label>
+    <select id="model">
+      <option value="onnx-community/gemma-3-270m-it-ONNX|q4f16">270M · q4f16 · 273 MB (WebGPU)</option>
+      <option value="onnx-community/gemma-3-270m-it-ONNX|q4" selected>270M · q4 · 323 MB (any phone)</option>
+      <option value="onnx-community/gemma-3-1b-it-ONNX|q4">1B · q4 · 859 MB</option>
+    </select>
+    <label for="device">Backend</label>
+    <select id="device">
+      <option value="auto" selected>Auto (WebGPU if available, else WASM)</option>
+      <option value="webgpu">WebGPU</option>
+      <option value="wasm">WASM (CPU)</option>
+    </select>
+    <button class="go" id="start" type="button">Start test (downloads the model once)</button>
+    <p class="muted" id="env"></p>
+  </div>
+
+  <div class="card">
+    <pre id="log">Waiting.</pre>
+  </div>
+
+  <div class="card">
+    <table id="res"><thead><tr><th>#</th><th>s</th><th>Output</th></tr></thead><tbody></tbody></table>
+    <button id="copy" type="button">Copy results</button>
+  </div>
+</main>
+
+<script>
+  // Runs before the library loads, so the page shows device info even if the import fails.
+  document.getElementById("env").textContent = "WebGPU: " + (navigator.gpu ? "yes" : "no") + " · cores: " + (navigator.hardwareConcurrency || "?") + " · memory: " + (navigator.deviceMemory || "?") + " GB";
+  document.getElementById("log").textContent = "Loading the library…";
+</script>
+<script type="module">
+let pipeline, env;
+try {
+  // Library from our own site (the jsDelivr copy hung for 30 min on her network, 16 Oct).
+  const t0 = performance.now();
+  const tick = setInterval(() => { document.getElementById("log").textContent = "Loading the library… " + Math.round((performance.now() - t0) / 1000) + " s"; }, 1000);
+  const timeout = new Promise((_, rej) => setTimeout(() => rej(new Error("no answer after 60 s")), 60000));
+  try { ({ pipeline, env } = await Promise.race([import("./vendor/transformers.min.js"), timeout])); }
+  finally { clearInterval(tick); }
+  document.getElementById("log").textContent = "Library ready in " + Math.round((performance.now() - t0) / 1000) + " s. Press Start.";
+} catch (e) {
+  document.getElementById("log").textContent = "LIBRARY FAILED TO LOAD: " + e.message;
+  document.getElementById("start").disabled = true;
+  throw e;
+}
+env.allowLocalModels = false;
+const NARRATIONS = [
+  "TRANSFER FROM CHIDI OKAFOR GTBank *****1234/TRF|REF000111",
+  "Mama Ngozi for 5k withdrawal",
+  "AIRTIME TO 0803XXXXXXX MTN/ATP|REF000222",
+];
+const PROMPT = (n) => `You read the narration of a Nigerian bank credit alert.
+Reply with JSON only: {"kind": one of "customer_transfer","own_airtime","reward","reversal","other", "from": the sender's name copied exactly from the narration, or null}.
+Do not write any number.
+Narration: ${n}
+JSON:`;
+
+const $ = (id) => document.getElementById(id);
+const log = (s) => { $("log").textContent += "\n" + s; };
+let statusEl = null;
+// One live line for the big model file, so its progress does not flood the log.
+const setStatus = (s) => {
+  if (!statusEl) { statusEl = document.createElement("div"); statusEl.style.cssText = "font:600 14px ui-monospace,Consolas,monospace;margin-top:8px"; $("log").after(statusEl); }
+  statusEl.textContent = s;
+};
+const hasWebGPU = !!navigator.gpu;
+if (hasWebGPU) { $("model").value = "onnx-community/gemma-3-270m-it-ONNX|q4f16"; }
+const results = { ua: navigator.userAgent, webgpu: hasWebGPU, cores: navigator.hardwareConcurrency, memGB: navigator.deviceMemory, runs: [] };
+window.__results = results;  // read by bench/drive.mjs on the laptop
+
+$("start").addEventListener("click", async () => {
+  $("start").disabled = true;
+  $("log").textContent = "Starting.";
+  const [modelId, dtype] = $("model").value.split("|");
+  let device = $("device").value;
+  if (device === "auto") device = hasWebGPU ? "webgpu" : "wasm";
+  results.model = modelId; results.dtype = dtype; results.device = device;
+  log(`Model ${modelId} (${dtype}) on ${device}. Downloading…`);
+  const t0 = performance.now();
+  let lastPct = "";
+  let gen;
+  try {
+    const loadTimeout = new Promise((_, rej) => setTimeout(() => rej(new Error("model not loaded after 60 min (check the log above for the last file)")), 3600000));
+    gen = await Promise.race([loadTimeout, pipeline("text-generation", modelId, {
+      dtype, device,
+      progress_callback: (p) => {
+        if (p.status === "progress" && p.total) {
+          const pct = Math.floor((p.loaded / p.total) * 100);
+          const key = p.file + ":" + pct;
+          if (key !== lastPct) {
+            lastPct = key;
+            const line = `  ${p.file}: ${pct}% (${(p.loaded / 1e6).toFixed(1)} of ${(p.total / 1e6).toFixed(0)} MB, ${((performance.now() - t0) / 1000).toFixed(0)} s)`;
+            if (p.total > 50e6) setStatus(line); else if (pct % 10 === 0) log(line);
+          }
+        } else if (p.status === "initiate" || p.status === "done" || p.status === "ready") {
+          log(`  ${((performance.now() - t0) / 1000).toFixed(0)} s · ${p.status} ${p.file || ""}`);
+        }
+      },
+    })]);
+  } catch (e) {
+    log("LOAD FAILED: " + e.message); results.error = e.message; $("start").disabled = false; return;
+  }
+  results.load_s = +((performance.now() - t0) / 1000).toFixed(1);
+  log(`Loaded in ${results.load_s} s.`);
+  const tbody = $("res").querySelector("tbody");
+  for (let i = 0; i < NARRATIONS.length; i++) {
+    const t = performance.now();
+    const out = await gen([{ role: "user", content: PROMPT(NARRATIONS[i]) }], { max_new_tokens: 48, do_sample: false });
+    const s = +((performance.now() - t) / 1000).toFixed(1);
+    const text = out[0].generated_text.at(-1).content.trim();
+    results.runs.push({ narration: NARRATIONS[i], s, text });
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td>${i + 1}</td><td>${s}</td><td></td>`;
+    tr.lastChild.textContent = text;
+    tbody.appendChild(tr);
+    log(`#${i + 1}: ${s} s`);
+  }
+  const worst = Math.max(...results.runs.map((r) => r.s));
+  results.gate_pass = worst <= 15;
+  log(`Slowest: ${worst} s → gate ${results.gate_pass ? "PASS" : "FAIL"} (≤ 15 s).`);
+  $("start").disabled = false;
+});
+
+$("copy").addEventListener("click", async () => {
+  results.finished = results.runs.length === NARRATIONS.length;
+  results.log = $("log").textContent.split(String.fromCharCode(10)).slice(-12);
+  const text = JSON.stringify(results, null, 1);
+  try { await navigator.clipboard.writeText(text); $("copy").textContent = "Copied"; }
+  catch { $("log").textContent = text; $("copy").textContent = "Copy blocked: results shown above"; }
+});
+
+// #auto (laptop runs only): press Start by itself; #auto-wasm forces the CPU backend.
+if (location.hash.startsWith("#auto")) {
+  if (location.hash.includes("wasm")) $("device").value = "wasm";
+  if (location.hash.includes("q4") && !location.hash.includes("q4f16")) $("model").value = "onnx-community/gemma-3-270m-it-ONNX|q4";
+  if (location.hash.includes("1b")) $("model").value = "onnx-community/gemma-3-1b-it-ONNX|q4";
+  $("start").click();
+}
+</script>
+</body>
+</html>

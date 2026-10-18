@@ -1,0 +1,39 @@
+10 s  Gemma: loading… | Download: 0% (0 of 819 MB) | 
+20 s  Gemma: loading… | Download: 0% (8 of 819 MB) | 
+30 s  Gemma: loading… | Download: 1% (11 of 819 MB) | 
+41 s  Gemma: loading… | Download: 1% (16 of 819 MB) | 
+51 s  Gemma: loading… | Download: 4% (33 of 819 MB) | 
+61 s  Gemma: loading… | Download: 6% (52 of 819 MB) | 
+71 s  Gemma: loading… | Download: 8% (72 of 819 MB) | 
+81 s  Gemma: loading… | Download: 11% (95 of 819 MB) | 
+91 s  Gemma: loading… | Download: 13% (111 of 819 MB) | 
+101 s  Gemma: loading… | Download: 15% (131 of 819 MB) | 
+111 s  Gemma: loading… | Download: 18% (152 of 819 MB) | 
+121 s  Gemma: loading… | Download: 20% (169 of 819 MB) | 
+131 s  Gemma: loading… | Download: 23% (192 of 819 MB) | 
+141 s  Gemma: loading… | Download: 25% (210 of 819 MB) | 
+151 s  Gemma: loading… | Download: 28% (231 of 819 MB) | 
+161 s  Gemma: loading… | Download: 31% (256 of 819 MB) | 
+171 s  Gemma: loading… | Download: 32% (265 of 819 MB) | 
+321 s  Gemma: loading… | Download: 34% (280 of 819 MB) · 4 stalls, retried | 
+331 s  Gemma: loading… | Download: 38% (312 of 819 MB) · 4 stalls, retried | 
+341 s  Gemma: loading… | Download: 41% (342 of 819 MB) · 4 stalls, retried | 
+351 s  Gemma: loading… | Download: 45% (371 of 819 MB) · 4 stalls, retried | 
+361 s  Gemma: loading… | Download: 48% (400 of 819 MB) · 4 stalls, retried | 
+371 s  Gemma: loading… | Download: 52% (432 of 819 MB) · 4 stalls, retried | 
+381 s  Gemma: loading… | Download: 56% (462 of 819 MB) · 4 stalls, retried | 
+391 s  Gemma: loading… | Download: 59% (490 of 819 MB) · 4 stalls, retried | 
+401 s  Gemma: loading… | Download: 63% (520 of 819 MB) · 4 stalls, retried | 
+411 s  Gemma: loading… | Download: 67% (549 of 819 MB) · 4 stalls, retried | 
+421 s  Gemma: loading… | Download: 70% (581 of 819 MB) · 4 stalls, retried | 
+431 s  Gemma: loading… | Download: 75% (616 of 819 MB) · 4 stalls, retried | 
+441 s  Gemma: loading… | Download: 80% (656 of 819 MB) · 4 stalls, retried | 
+451 s  Gemma: loading… | Download: 82% (680 of 819 MB) · 4 stalls, retried | 
+461 s  Gemma: loading… | Download: 85% (698 of 819 MB) · 4 stalls, retried | 
+471 s  Gemma: loading… | Download: 87% (719 of 819 MB) · 4 stalls, retried | 
+481 s  Gemma: loading… | Download: 90% (744 of 819 MB) · 4 stalls, retried | 
+491 s  Gemma: loading… | Download: 94% (777 of 819 MB) · 4 stalls, retried | 
+501 s  Gemma: loading… | Download: 99% (813 of 819 MB) · 4 stalls, retried | 
+511 s  Gemma: loading… | Download: 100% (819 of 819 MB) · 4 stalls, retried | 
+521 s  Gemma: not loaded | Download: 100% (819 of 819 MB) · 4 stalls, retried | Gemma could not load: Can't create a session. ERROR_CODE: 9, ERROR_MESSAGE: Could not find an implementation for GatherBlockQuantized(1) node with name '/model/embed_tokens/Gather_Quant' Rows are still saved.
+STALLS: [{"file":"model_q4.onnx_data","chunk":33,"of":103,"attempt":1,"error":"stalled","bytes_in_piece":1151380,"at":"2026-10-18T00:46:29.374Z","visible":"visible","online":true},{"file":"model_q4.onnx_data","chunk":33,"of":103,"attempt":2,"error":"Failed to fetch","bytes_in_piece":0,"at":"2026-10-18T00:47:16.678Z","visible":"visible","online":true},{"file":"model_q4.onnx_data","chunk":33,"of":103,"attempt":3,"error":"Failed to fetch","bytes_in_piece":0,"at":"2026-10-18T00:47:54.939Z","visible":"visible","online":true},{"file":"model_q4.onnx_data","chunk":33,"of":103,"attempt":4,"error":"Failed to fetch","bytes_in_piece":0,"at":"2026-10-18T00:48:36.773Z","visible":"visible","online":true}]

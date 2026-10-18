@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gemma narration eval</title>
+<style>
+  body { margin: 0; background: #f4f5f2; color: #17201b; font: 15px/1.45 system-ui, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 16px; }
+  pre { white-space: pre-wrap; word-break: break-word; font: 12.5px/1.4 ui-monospace, Consolas, monospace; background: #fff; border: 1px solid #d3d9d4; border-radius: 10px; padding: 10px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Gemma narration eval</h1>
+  <p>Synthetic set (fake names). Hash: <code>#few</code> or <code>#zero</code> prompt; add <code>-1b</code> for Gemma 3 1B.</p>
+  <pre id="log">Waiting.</pre>
+</main>
+<script type="module">
+import { classify, readAlert } from "./src/classify.js";
+import { parseMoniepoint } from "./src/parse.js";
+const $ = (id) => document.getElementById(id);
+const log = (s) => { $("log").textContent += "\n" + s; };
+const h = location.hash || "#few";
+const style = h.includes("zero") ? "zero" : "few";
+const split = h.includes("split");   // #few-1b-split: the app's path (code kind, Gemma only for a customer's name)
+const cpu = h.includes("cpu");   // #few-1b-cpu: int8 on the CPU engine, what her phone gets (q4 needs WebGPU)
+const MODEL = h.includes("1b") ? { id: "onnx-community/gemma-3-1b-it-ONNX", dtype: cpu ? "int8" : "q4" } : { id: "onnx-community/gemma-3-270m-it-ONNX", dtype: "q4" };
+const ev = window.__eval = { model: MODEL, style, split, device: navigator.gpu && !cpu ? "webgpu" : "wasm", isolated: crossOriginIsolated, items: [], done: false };
+
+try {
+  const { pipeline, env } = await import("./vendor/transformers.min.js");
+  const { makeResumableFetch, cacheApiStore } = await import("./src/resumable.js");
+  env.fetch = makeResumableFetch({ store: cacheApiStore(), onProgress: ({ done, total }) => { ev.dl = `${Math.round(done / 1048576)}/${Math.round(total / 1048576)} MB`; } });
+  // #real: her 5 redacted alerts and her labels (18 Oct), served only by test/serve-local.mjs on 127.0.0.1 (never deployed).
+  const real = h.includes("real");
+  const labels = real ? await (await fetch("./private/real_labels.json")).json() : [];
+  const syn = real
+    ? (await (await fetch("./private/real_alerts_redacted.json")).json()).map((text, i) => ({ id: `real-${i + 1}`, text, label: labels[i] || {} }))
+    : await (await fetch("./eval/synthetic.json")).json();
+  $("log").textContent = `Loading ${MODEL.id} (${MODEL.dtype}) on ${ev.device}, prompt=${style}…`;
+  const t0 = performance.now();
+  const gen = await pipeline("text-generation", MODEL.id, { dtype: MODEL.dtype, device: ev.device, use_external_data_format: MODEL.dtype !== "int8" });
+  ev.load_s = +((performance.now() - t0) / 1000).toFixed(1);
+  log(`Loaded in ${ev.load_s} s. Running ${syn.length} narrations.`);
+  let calls = 0;
+  const model = async (prompt) => {
+    calls++;
+    const out = await gen([{ role: "user", content: prompt }], { max_new_tokens: 48, do_sample: false });
+    return out[0].generated_text.at(-1).content;
+  };
+  for (const s of syn) {
+    const [row] = parseMoniepoint(s.text);
+    const t = performance.now();
+    const before = calls;
+    const r = split ? await readAlert({ narration: row.narration, raw: row.raw }, model, { style })
+                    : await classify({ narration: row.narration, raw: row.raw }, model, { style });
+    const item = {
+      id: s.id, narration: row.narration, label: s.label, got: { kind: r.kind, from: r.from },
+      kind_ok: r.kind === s.label.kind,
+      from_ok: (r.from || null)?.toLowerCase() === (s.label.from || null)?.toLowerCase(),
+      calls: calls - before, s: +((performance.now() - t) / 1000).toFixed(1),
+      first_output: r.attempts[0]?.output?.slice(0, 160), reasons: r.attempts.map((a) => a.reasons),
+    };
+    ev.items.push(item);
+    log(`${s.id} ${item.kind_ok ? "✓" : "✗"}kind ${item.from_ok ? "✓" : "✗"}from ${item.s}s  got=${r.kind}/${r.from}`);
+  }
+  const n = ev.items.length, it = ev.items;
+  ev.summary = {
+    n, kind_acc: it.filter((x) => x.kind_ok).length, from_acc: it.filter((x) => x.from_ok).length,
+    unclear: it.filter((x) => x.got.kind === "unclear").length,
+    retried: it.filter((x) => x.calls > 1).length,
+    invented_number_rejections: it.filter((x) => x.reasons.flat().some((r) => r.startsWith("invented_number"))).length,
+    median_s: [...it.map((x) => x.s)].sort((a, b) => a - b)[Math.floor(n / 2)],
+  };
+  log("SUMMARY " + JSON.stringify(ev.summary));
+} catch (e) {
+  ev.error = e.message; log("ERROR " + e.message);
+}
+ev.done = true;
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "POS Day-book",
+  "short_name": "Day-book",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f5f2",
+  "theme_color": "#0b5f46",
+  "icons": []
+}

@@ -1,0 +1,46 @@
+5 s  Starting. | Model onnx-community/gemma-3-270m-it-ONNX (q4f16) on webgpu. Downloading…
+10 s    tokenizer.json: 0% (0.1 of 20 MB, 8 s) |   tokenizer.json: 0% (0.2 of 20 MB, 8 s)
+15 s    tokenizer.json: 10% (2.1 of 20 MB, 13 s) |   tokenizer.json: 10% (2.2 of 20 MB, 13 s)
+20 s    tokenizer.json: 20% (4.2 of 20 MB, 16 s) |   tokenizer.json: 20% (4.2 of 20 MB, 16 s)
+25 s    tokenizer.json: 30% (6.3 of 20 MB, 24 s) |   tokenizer.json: 30% (6.3 of 20 MB, 24 s)
+30 s    tokenizer.json: 40% (8.2 of 20 MB, 29 s) |   tokenizer.json: 40% (8.2 of 20 MB, 29 s)
+35 s    tokenizer.json: 40% (8.3 of 20 MB, 29 s) |   tokenizer.json: 40% (8.3 of 20 MB, 29 s)
+40 s    tokenizer.json: 50% (10.3 of 20 MB, 35 s) |   tokenizer.json: 50% (10.3 of 20 MB, 35 s)
+45 s    tokenizer.json: 60% (12.4 of 20 MB, 43 s) |   tokenizer.json: 60% (12.4 of 20 MB, 43 s)
+50 s    tokenizer.json: 70% (14.4 of 20 MB, 48 s) |   tokenizer.json: 70% (14.4 of 20 MB, 48 s)
+55 s    tokenizer.json: 80% (16.4 of 20 MB, 51 s) |   tokenizer.json: 80% (16.5 of 20 MB, 51 s)
+60 s    tokenizer.json: 90% (18.4 of 20 MB, 54 s) |   tokenizer.json: 90% (18.5 of 20 MB, 55 s)
+68 s    tokenizer.json: 100% (20.3 of 20 MB, 60 s) |   60 s · done tokenizer.json
+258 s    60 s · done tokenizer.json |   253 s · done onnx/model_q4f16.onnx_data
+267 s    265 s · ready  | Loaded in 265.2 s.
+287 s  Loaded in 265.2 s. | #1: 16.4 s
+292 s  #1: 16.4 s | #2: 7.5 s
+303 s  #3: 8.1 s | Slowest: 16.4 s → gate FAIL (≤ 15 s).
+{
+ "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+ "webgpu": true,
+ "cores": 8,
+ "memGB": 16,
+ "runs": [
+  {
+   "narration": "TRANSFER FROM CHIDI OKAFOR GTBank *****1234/TRF|REF000111",
+   "s": 16.4,
+   "text": "```json\n\"\"\"\nRecommendation:\n\"\"\"\n\"\"\"\nWe're looking for a new ATM. We're looking for a new ATM. We're looking for a new ATM. We're looking for a new ATM."
+  },
+  {
+   "narration": "Mama Ngozi for 5k withdrawal",
+   "s": 7.5,
+   "text": "```json\n\"\"\"\nRecommendation:\n\"\"\"\n\"\"\"\nWe're looking for a new ATM. We're looking for a new ATM. We're looking for a new ATM. We're looking for a new ATM."
+  },
+  {
+   "narration": "AIRTIME TO 0803XXXXXXX MTN/ATP|REF000222",
+   "s": 8.1,
+   "text": "```json\n\"\"\"\nRecommendation:\n\"\"\"\n\"\"\"\nWe're looking for a new ATM in the city. We're looking for a new ATM in the city. We're looking for a new ATM in the city."
+  }
+ ],
+ "model": "onnx-community/gemma-3-270m-it-ONNX",
+ "dtype": "q4f16",
+ "device": "webgpu",
+ "load_s": 265.2,
+ "gate_pass": false
+}
